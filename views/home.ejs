@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+<div class="container">
+<form action="/delete" method="POST">
+<div class="jumbotron">
+    <% post.forEach(value => { %>
+        <h1 class="display-4"><%=value.title %></h1>
+        <p class="lead"><%=value.post.substr(0,100) %> ...</p>
+        <a class='btn btn-success'href="/post/<%= value.title %>">Read more</a> &nbsp;
+        <a class='btn btn-danger' href="/delete/<%= value._id %>">Delete</a>
+        <hr class="my-4">
+    <% }) %>
+  </div>
+</form>
+</div>
+<%- include("partials/footer") %>
+
